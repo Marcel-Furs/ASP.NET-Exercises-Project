@@ -1,0 +1,32 @@
+﻿@model List<CharakterViewModel>
+
+<h1>Postacie:</h1>
+
+<a asp-controller="Charakter" asp-action="Create">Dodaj nową postać</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Type</th>
+            <th>Weapon</th>
+            <th>Damage</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Type</td>
+                <td>@item.Weapon</td>
+                <td>@item.Damage</td>
+                <td>
+                    <a asp-controller="Charakter" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-controller="Charakter" asp-action="Update" asp-route-id="@item.Id">Zmień</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

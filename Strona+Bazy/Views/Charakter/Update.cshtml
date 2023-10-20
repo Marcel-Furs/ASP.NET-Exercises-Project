@@ -1,0 +1,25 @@
+﻿
+@model CharakterViewModel
+
+<h1>Edytuj postać</h1>
+
+<form method="POST">
+    <div>
+        <label asp-for="Type"></label>
+        <input asp-for="Type" cclass="form-control" />
+        <span asp-validation-for="Weapon" class="text-danger"></span>
+    </div>
+
+        <div>
+        <label asp-for="Weapon"></label>
+        <input asp-for="Weapon" cclass="form-control" />
+        <span asp-validation-for="Weapon" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Damage"></label>
+        <input asp-for="Damage" cclass="form-control" />
+        <span asp-validation-for="Damage" class="text-danger"></span>
+    </div>
+
+    <button class="btn btn-success">Submit</button>
+</form>
